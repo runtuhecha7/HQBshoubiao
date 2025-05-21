@@ -1,0 +1,31 @@
+我将分四期来讲解华强北全系root全过程（非常详细，还有知识扩展)
+1.工具准备和深度刷机 
+2.提取分区及修补boot
+3.签名（了解签名规则和签名方法） 
+4.刷入并成功获取root
+还是那句话：北极星出品，必属精品
+
+教程所用获取权限命令 ：
+fdl fdl1-sign.bin 0x00005000
+fdl fdl2-sign.bin 0x9efffe00
+exec
+
+第二期-提取分区&修补boot
+fdl fdl1-sign.bin 0x00005000
+fdl fdl2-sign.bin 0x9efffe00
+exec
+r boot
+r vbmeta
+reset
+重命名内容：
+boot.img
+vbmeta-sign.img
+
+
+第四期-刷入分区并成功获取root（root完结篇）
+所需命令：
+fdl fdl1-sign.bin 0x00005000
+fdl fdl2-sign.bin 0x9efffe00
+exec
+w vbmeta
+w boot
